@@ -7,28 +7,48 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-//#include <fahr.c>
 
 /*
  * Main will run all exercises. 
  */
 int main(int argc, char** argv) {
 
-    exercise1_5();
+    //temp2();
+    exercise1_6();
     return (EXIT_SUCCESS);
 }
 
 int temp() 
 {
-    //
+    // Copy input to output; 1st version
+}
+
+int exercise1_7()
+{
+    int i;
+    i = EOF;
+    printf("The value of EOF is %d", i);   
+}
+
+int exercise1_6()
+{
+    int c;
+    while (c = getchar() != EOF)
+        printf("current value is %d\n", c);
+    
+    printf("Value when EOF is %d", c);   
 }
 
 int exercise1_5()
 {
     /* Excercise 1.5 */
+#define LOWER 0         /* lower limit of table */
+#define UPPER 300       /* upper limit */
+#define STEP 20         /* step size */
+    
     int fahr;
     
-    for (fahr = 300; fahr >= 0; fahr = fahr - 20)
+    for (fahr = UPPER; fahr >= LOWER; fahr = fahr - STEP)
         printf("%3d %6.1f\n", fahr, (5.0/9.0)*(fahr-32));
     
 }
