@@ -13,8 +13,8 @@
  */
 int main(int argc, char** argv) {
 
-    //temp2();
-    exercise1_6();
+    temp2();
+    //exercise1_6();
     return (EXIT_SUCCESS);
 }
 
