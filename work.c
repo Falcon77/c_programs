@@ -5,7 +5,7 @@
 
 int temp2() 
 {
-    CountChars2();
+    CountLines();
 }
 
 CountLines()
@@ -17,7 +17,7 @@ CountLines()
     nl = 0;
     while ((c = getchar()) != EOF)
     {
-        if (c === '\n'){
+        if (c == '\n'){
             ++nl;
         }
     }

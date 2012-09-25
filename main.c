@@ -13,14 +13,78 @@
  */
 int main(int argc, char** argv) {
 
-    temp2();
-    //exercise1_6();
+    //temp2();
+    exercise1_10();
     return (EXIT_SUCCESS);
 }
 
 int temp() 
 {
     // Copy input to output; 1st version
+}
+
+int exercise1_10()
+{
+    int c;
+    
+    while ((c = getchar()) != EOF)
+    {
+        if ((c != '\t') && (c != '\b') && (c != '\\'))
+                putchar(c);
+        
+        if (c == '\t')
+            putchar('\\t');     
+        if (c == '\b')
+            putchar('\\b');
+        if (c == '\\')
+            putchar('\\\\');;
+        }
+        
+    }
+}
+
+int exercise1_9()
+{
+    int c, i;
+    
+    i = 0;
+    while ((c = getchar()) != EOF)
+    {
+        if (c != ' ')
+        {
+            putchar(c);
+            i = 0;
+        }
+        else if (c == ' ')
+        {
+            ++i;
+            if (i < 2)
+            {
+                putchar(c);
+            }
+        }
+    }
+}
+
+int exercise1_8()
+{
+    int sp, nl, nt;
+    int c;
+    
+    sp = 0;
+    nl = 0;
+    nt = 0;
+    
+    while ((c = getchar()) != EOF)
+    {
+        if (c == ' ')
+            ++sp;
+        if (c == '\t')
+            ++nt;
+        if (c == '\n')
+            ++nl;
+    }
+    printf("spaces: %d\ntabs: %d\nnew lines:%d", sp, nt, nl);
 }
 
 int exercise1_7()
