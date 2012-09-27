@@ -13,8 +13,8 @@
  */
 int main(int argc, char** argv) {
 
-    //temp2();
-    exercise1_10();
+    temp2();
+    //exercise1_10();
     return (EXIT_SUCCESS);
 }
 
@@ -33,11 +33,21 @@ int exercise1_10()
                 putchar(c);
         
         if (c == '\t')
-            putchar('\\t');     
+        {
+            putchar('\\');
+            putchar('t');
+        }
+        
         if (c == '\b')
-            putchar('\\b');
+        {
+            putchar('\\');
+            putchar('b');
+        }
+        
         if (c == '\\')
-            putchar('\\\\');;
+        {
+            putchar('\\');
+            putchar('\\');
         }
         
     }
