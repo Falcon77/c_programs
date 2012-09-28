@@ -13,14 +13,47 @@
  */
 int main(int argc, char** argv) {
 
-    temp2();
-    //exercise1_10();
+    //temp2();
+    exercise1_12();
     return (EXIT_SUCCESS);
 }
 
-int temp() 
+int exercise1_12() 
 {
-    // Copy input to output; 1st version
+#define IN  1   /* inside a word */
+#define OUT 2   /* outside a word */
+    
+    /* Write a program that prints its input one word per line */
+    
+    int c, nw, state;
+    
+    
+    state = OUT;
+    nw = 0;
+    while ((c = getchar()) != EOF)
+    {
+        if (c == ' ' || c == '\n' || c == '\t')
+        {
+            if (state == IN)
+            {
+                state = OUT;
+                putchar('\n');
+            }
+        }
+        else if (state == OUT)
+        {
+            state = IN;
+            putchar(c);
+        }
+        else
+            putchar(c);
+    }
+    
+}
+
+int exercise1_11() 
+{
+    /* inputs with special characters */
 }
 
 int exercise1_10()
