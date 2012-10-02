@@ -14,8 +14,41 @@
 int main(int argc, char** argv) {
 
     //temp2();
-    exercise1_12();
+    exercise1_13();
     return (EXIT_SUCCESS);
+}
+
+/* Write a program to print a histogram of the lengths of 
+ * words in its input. */
+int exercise1_13()
+{
+#define IN  1   /* inside a word */
+#define OUT 2   /* outside a word */
+    
+    int c, i, nc, state;
+    
+    nc = 0;
+    state = OUT;
+    while ((c = getchar()) != EOF)
+    {
+        if (c == ' ' || c == '\n' || c == '\t')
+        {
+            if (state == IN)
+            {
+                for (i = 0; i < nc; ++i)
+                    printf("=");
+                printf("\n");
+                nc = 0;
+            }
+            state = OUT;
+        }
+        else
+        {
+            if (state == OUT)
+                state = IN;
+            ++nc;
+        }
+    }
 }
 
 int exercise1_12() 
