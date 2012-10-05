@@ -14,7 +14,7 @@
 int main(int argc, char** argv) {
 
     //temp2();
-    exercise1_13();
+    exercise1_13b();
     return (EXIT_SUCCESS);
 }
 
@@ -25,10 +25,10 @@ int exercise1_13b()
 #define OUT  2   /* inside a word */
     
     int c, i, nc, state, nw;
-    int nchar[10];
-    int highNum, i2;
+    int numchar[100];
+    int highNum, i2, i3;
     
-    nw = i = highNum = 0;
+    nw = i = highNum = nc = 0;
     state = OUT;
     
     while ((c = getchar()) != EOF)
@@ -40,7 +40,7 @@ int exercise1_13b()
                 ++nw;
                 if (nc > highNum)
                     highNum = nc;
-                nchar[i] = nc;
+                numchar[i] = nc;
                 nc = 0;
                 ++i;
             }
@@ -52,15 +52,20 @@ int exercise1_13b()
                 state = IN;
             ++nc;
         }
-        
-        for (i2 = 0; i2 < nw; ++i2)
-        {
-            if (nchar[i2] == )
-        }
     }
     
-    
-    
+    putchar('\n');
+    for (i2 = highNum; i2 > 0; --i2)
+    {
+        for (i3 = 0; i3 < nw; ++i3)
+        {
+            if (i2 <= numchar[i3])
+                putchar('@');
+            else
+                putchar(' ');
+        }
+        putchar('\n');
+    }
 }
 
 /* Write a program to print a histogram of the lengths of 
