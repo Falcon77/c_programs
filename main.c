@@ -18,6 +18,51 @@ int main(int argc, char** argv) {
     return (EXIT_SUCCESS);
 }
 
+/* Write the histogram program shown vertically */
+int exercise1_13b()
+{
+#define IN   1   /* inside a word */
+#define OUT  2   /* inside a word */
+    
+    int c, i, nc, state, nw;
+    int nchar[10];
+    int highNum, i2;
+    
+    nw = i = highNum = 0;
+    state = OUT;
+    
+    while ((c = getchar()) != EOF)
+    {
+        if (c == ' ' || c == '\n' || c == '\t')
+        {
+            if (state == IN)
+            {
+                ++nw;
+                if (nc > highNum)
+                    highNum = nc;
+                nchar[i] = nc;
+                nc = 0;
+                ++i;
+            }
+            state = OUT;
+        }
+        else
+        {
+            if (state == OUT)
+                state = IN;
+            ++nc;
+        }
+        
+        for (i2 = 0; i2 < nw; ++i2)
+        {
+            if (nchar[i2] == )
+        }
+    }
+    
+    
+    
+}
+
 /* Write a program to print a histogram of the lengths of 
  * words in its input. */
 int exercise1_13()
